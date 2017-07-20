@@ -12,7 +12,7 @@ const CopyWebpackPluginConfig = new CopyWebpackPlugin([
 		ignore: []
 	});
 
-// Clean out public folder 
+// Clean out public folder
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CleanWebpackPluginConfig = new CleanWebpackPlugin(['public']);
 
@@ -43,13 +43,13 @@ module.exports = {
 
 	module: {
 		rules: [
-			{ 
+			{
 				test: /\.(js|jsx)$/,
 				use: [
 					"babel-loader",
-					"eslint-loader",
-		        ], 
-				exclude: /node_modules/ 
+					// "eslint-loader",
+		        ],
+				exclude: /node_modules/
 			},
 
 			{
@@ -58,8 +58,8 @@ module.exports = {
 					fallback: 'style-loader',
 					//resolve-url-loader may be chained before sass-loader if necessary
 					use: [
-						'css-loader', 
-						'postcss-loader', 
+						'css-loader',
+						'postcss-loader',
 						'sass-loader'
 					]
 		        })
